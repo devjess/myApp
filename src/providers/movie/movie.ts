@@ -14,7 +14,7 @@ export class MovieProvider {
   constructor(public http: HttpClient) {
   }
 
-  getLatestMovies(){
-    return this.http.get(this.base_url + "movie/popular?api_key=" + this.api_key);
+  getLatestMovies(page=1){
+    return this.http.get(this.base_url + `movie/popular?page=${page}&api_key=` + this.api_key);
   }
 }
